@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructionFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/video_container">
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_pv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/thumbnail_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/no_video"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:visibility="gone"
+            android:id="@+id/placeholder_text"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardBack"
+        android:textColor="@color/cardText"
+        android:padding="15dp"
+        android:layout_margin="10dp"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_below="@id/video_container"
+        android:layout_above="@id/navigation_container"
+        android:id="@+id/instruction_text"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/navigation_container">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prev_step"
+            android:layout_gravity="start"
+            android:background="@color/cardBack"
+            android:textColor="@color/cardText"
+            android:id="@+id/prev_step_button"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18dp"
+            android:id="@+id/current_step_text"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_step"
+            android:layout_gravity="end"
+            android:background="@color/cardBack"
+            android:textColor="@color/cardText"
+            android:id="@+id/next_step_button"/>
+    </FrameLayout>
+
+</RelativeLayout>
